@@ -87,7 +87,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: -0.1}
   serializedVersion: 2
@@ -127,7 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arena: {fileID: 0}
-  prefab: {fileID: 11420070, guid: f75c9d676b425d546a1aca9913d346a6, type: 2}
+  prefab: {fileID: 11431480, guid: f75c9d676b425d546a1aca9913d346a6, type: 2}
+  color: {r: 0, g: 0, b: 1, a: 1}
   hostile: 0
 --- !u!212 &21200780
 SpriteRenderer:
