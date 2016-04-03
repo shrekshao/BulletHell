@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458190}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fire_position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,10 @@ GameObject:
   - 4: {fileID: 437706}
   - 114: {fileID: 11417328}
   - 114: {fileID: 11474552}
-  m_Layer: 0
+  - 114: {fileID: 11499548}
+  - 50: {fileID: 5012372}
+  - 61: {fileID: 6128160}
+  m_Layer: 9
   m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +44,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496412}
   - 212: {fileID: 21209280}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: comradestalin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 122878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4010337, y: 0.40103385, z: 0.40103385}
   m_Children:
   - {fileID: 458190}
   - {fileID: 496412}
@@ -86,6 +89,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 437706}
   m_RootOrder: 1
+--- !u!50 &5012372
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122878}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &6128160
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122878}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 2.72, y: 2.32}
 --- !u!114 &11417328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,6 +144,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
+  flyingSpeed: 0.1
+--- !u!114 &11499548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b5dcd95784f7b499f954839f72a136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21209280
 SpriteRenderer:
   m_ObjectHideFlags: 1

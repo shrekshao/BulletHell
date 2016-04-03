@@ -29,8 +29,12 @@ public class EnemyBehaviorBase : MonoBehaviour {
 
     void Aim(Transform target)
     {
-        float r = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, r));
+        if(target)
+        {
+            float r = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, r));
+        }
+        
     }
 
     void Deconstruct()
