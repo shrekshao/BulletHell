@@ -9,4 +9,24 @@
     ,{"class":"Enemy3", "time": 7.5, "x": 4.0, "path": "down"}
     ,{"class":"Enemy1", "time": 7.0, "x": 0.5, "path": "path3", "pathTime": 30.0}
     ,{"class":"Boss1", "time": 10.0, "x": -0.5, "path": "-"}
+    ,{"class":"Enemy3", "time": 16.0, "x": -5.0, "path": "down"}
+    ,{"class":"Enemy3", "time": 16.5, "x": -2.0, "path": "down"}
+    ,{"class":"Enemy3", "time": 17.0, "x": 3.0, "path": "down"}
+    ,{"class":"Enemy3", "time": 17.5, "x": 4.0, "path": "down"}
+    ,{"class":"Enemy1", "time": 7.0, "x": 0.5, "path": "path3", "pathTime": 70.0}
+    ,{"class":"Boss1", "time": 40.0, "x": -0.5, "path": "-"}
+    ,{"class":"Enemy1", "time": 45.0, "x": 0.2, "path": "path4", "pathTime": 60.0}
+    ,{"class":"Enemy3", "time": 50.0, "x": -5.0, "path": "down"}
+    ,{"class":"Enemy3", "time": 53.5, "x": -2.0, "path": "down"}
+    ,{"class":"Enemy3", "time": 56.0, "x": 3.0, "path": "down"}
+    ,{"class":"Enemy3", "time": 58.5, "x": 4.0, "path": "down"}
+    ,{"class":"Boss1", "time": 65.0, "x": -0.5, "path": "-"}
+    ,{"class":"Enemy1", "time": 80.0, "x": 0.2, "path": "path1", "pathTime": 100.0}
+    ,{"class":"Enemy1", "time": 80.0, "x": 0.8, "path": "path2", "pathTime": 50.0}
+    ,{"class":"Enemy1", "time": 84.0, "x": 0.5, "path": "-"}
+    ,{"class":"Enemy1", "time": 85.0, "x": 0.5, "path": "path2", "pathTime": 50.0}
+    ,{"class":"Enemy1", "time": 90.0, "x": 0.5, "path": "path3", "pathTime": 50.0}
+    ,{"class":"Enemy1", "time": 95.0, "x": 0.5, "path": "path3", "pathTime": 50.0}
+    ,{"class":"Enemy1", "time": 99.0, "x": 0.5, "path": "path3", "pathTime": 50.0}
+    ,{"class":"Boss1", "time": 120.0, "x": -0.5, "path": "-"}
 ]

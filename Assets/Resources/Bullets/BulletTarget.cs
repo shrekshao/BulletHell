@@ -27,6 +27,10 @@ public class BulletTarget : MonoBehaviour
             sprite.color = color;
         }
         
+        if(transform.position.y < -10.0f)
+        {
+            Destroy(this);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
