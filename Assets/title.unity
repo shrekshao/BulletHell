@@ -180,7 +180,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11419546, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
       propertyPath: Slides.Array.size
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 419866, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
       propertyPath: m_LocalPosition.x
@@ -222,6 +222,41 @@ Prefab:
       propertyPath: Slides.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 3b7bee356516d6d4e8b176689c108826,
+        type: 3}
+    - target: {fileID: 11419546, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
+      propertyPath: Slides.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a5e64df7f6e1374e9547fe59113e4a3,
+        type: 3}
+    - target: {fileID: 11419546, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
+      propertyPath: Slides.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e86fa7aa2ff86c4b954ef798f7d8254,
+        type: 3}
+    - target: {fileID: 11419546, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
+      propertyPath: Slides.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8abfe8eb552f957438a69e438689133f,
+        type: 3}
+    - target: {fileID: 11419546, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
+      propertyPath: Slides.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: dcec3429c1627be449ec0b7e80d37114,
+        type: 3}
+    - target: {fileID: 11419546, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
+      propertyPath: Slides.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: f606377162ba7224b936365d93c7baa4,
+        type: 3}
+    - target: {fileID: 11419546, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
+      propertyPath: Slides.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ab5bec718beb874eb1b40324421401d,
+        type: 3}
+    - target: {fileID: 11419546, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
+      propertyPath: Slides.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d15808459db77942b282792ec7fac4b,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
