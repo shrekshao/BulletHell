@@ -24,16 +24,14 @@ public class EnemyBehaviorBase : MonoBehaviour
 
     void Update()
     {
-        if (playerTarget.Despawned) {
-            return;
-        }
-
         Aim(playerTarget);
     }
 
     void FixedUpdate()
     {
-        TryFire();
+        if (!playerTarget.Despawned) {
+            TryFire();
+        }
     }
 
     public float BulletSpeed = 0.1f;
