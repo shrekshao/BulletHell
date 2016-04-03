@@ -21,8 +21,8 @@ public class ArrowControl : MonoBehaviour
         if (move_x != 0 || move_y != 0) {
             var mv = new Vector3(move_x, move_y, 0);
             mv = mv.normalized * MoveSpeed * Time.timeScale;
-            this.transform.localPosition += mv;
+            this.transform.position += mv;
         }
-        this.transform.localPosition = BulletArena.Instance.bounds.ClosestPoint(this.transform.localPosition);
+        this.transform.position = BulletArena.Instance.bounds.ClosestPoint(this.transform.position);
     }
 }

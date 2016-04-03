@@ -129,12 +129,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletOrigin: {fileID: 436902}
-  BulletSpeed: 0.1
+  BulletSpeed: 0.05
   BulletPeriod: 1
   BulletSpread: 360
   RechargeTime: 5
   FiringTime: 1
-  SpreadFactor: 0.16
+  SpreadPhase: 0.618
   BulletPhaseOffset: 0
   prefab: {fileID: 11444432, guid: 6a90a04865ecc1a488074c0b581a88be, type: 2}
   flyingSpeed: 0.1

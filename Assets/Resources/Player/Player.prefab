@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0143c9f159b06438bdf24b528c0873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RespawnTime: 4
+  FlickerTime: 0.15
   SpawnPoint: {fileID: 0}
 --- !u!114 &11459832
 MonoBehaviour:
@@ -155,10 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6aaa4f1060754249a443a22d8366420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 0.2
+  BulletSpeed: 0.1
   BulletPeriod: 1
-  BulletSpread: 15
-  SpreadFactor: 0.618
+  SpreadPhase: 0.618
+  StartFiringVector: {x: 0, y: 5}
+  AimKey: 122
+  FireKey: 120
   prefab: {fileID: 11431480, guid: f75c9d676b425d546a1aca9913d346a6, type: 2}
   color: {r: 0, g: 0, b: 1, a: 1}
   BulletOrigin: {fileID: 472188}

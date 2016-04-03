@@ -25,4 +25,9 @@ public class Bullet : MonoBehaviour
             BulletArena.Despawn(this);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(this.gameObject);
+    }
 }

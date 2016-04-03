@@ -39,7 +39,7 @@ public class EnemyBehaviorBase : MonoBehaviour
     public float BulletSpread = 90;
     public float RechargeTime = 5;
     public float FiringTime = 5;
-    public float SpreadFactor = 0.618f;
+    public float SpreadPhase = 0.618f;
     public float BulletPhaseOffset = 0;
 
     public Bullet prefab;
@@ -74,7 +74,7 @@ public class EnemyBehaviorBase : MonoBehaviour
         if (since_last_shot >= BulletPeriod) {
             Vector2 vel = new Vector2(0, BulletSpeed);
 
-            last_angle = (last_angle + BulletSpread * SpreadFactor) % BulletSpread;
+            last_angle = (last_angle + BulletSpread * SpreadPhase) % BulletSpread;
             float angle = last_angle - BulletSpread * 0.5f;
 
             float r = (this.transform.rotation.eulerAngles.z + angle) * Mathf.Deg2Rad;
