@@ -56,7 +56,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
-  arena: {fileID: 0}
 --- !u!212 &21264700
 SpriteRenderer:
   m_ObjectHideFlags: 1

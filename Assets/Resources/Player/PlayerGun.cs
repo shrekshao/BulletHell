@@ -7,7 +7,6 @@ public class PlayerGun : MonoBehaviour
     const int BulletPeriod = 1;
     const float BulletSpread = 0.15f;
 
-    public BulletArena arena;
     public Bullet prefab;
     public Color color;
     public bool hostile;
@@ -29,7 +28,7 @@ public class PlayerGun : MonoBehaviour
                 last_angle = (last_angle + BulletSpread * 0.618f) % BulletSpread;
                 vel.Normalize();
                 vel *= BulletSpeed;
-                arena.Spawn(prefab, this.transform.position, vel, hostile);
+                BulletArena.Spawn(prefab, this.transform.position, vel, hostile);
                 since_last_shot = 0;
             }
         }
