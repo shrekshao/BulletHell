@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletOrigin: {fileID: 413834}
   BulletSpeed: 0.05
-  BulletPeriod: 5
+  BulletPeriod: 10
   BulletSpread: 60
   RechargeTime: 0
   FiringTime: 2

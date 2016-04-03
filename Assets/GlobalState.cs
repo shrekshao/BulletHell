@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GlobalState : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class GlobalState : MonoBehaviour
     public KeyCode SpeedSlow = KeyCode.LeftShift;
     public float SpeedSlowCost = 1.2f;
     public float PowerRechargeRate = 0.2f;
-
     public float MaxPower = 1000;
+
+    public KeyCode WinKey = KeyCode.Escape;
+    public string NextScene = "";
 
     public static bool PlayerDead { get; set; }
 
@@ -23,6 +26,8 @@ public class GlobalState : MonoBehaviour
         power = MaxPower;
         guistyle.normal.textColor = Color.black;
         guistyle.fontSize = 20;
+
+        Cursor.visible = false;
     }
 
     void OnGUI()
@@ -33,6 +38,10 @@ public class GlobalState : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(WinKey)) {
+            SceneManager.LoadScene(NextScene);
+        }
+
         UsePower(-PowerRechargeRate);
 
         if (Input.GetKey(SpeedFast) && !PlayerDead && UsePower(SpeedFastCost)) {

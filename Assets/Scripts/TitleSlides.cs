@@ -14,19 +14,21 @@ public class TitleSlides : MonoBehaviour
     {
         slide = GetComponent<SpriteRenderer>();
         LoadSlide();
+
+        Cursor.visible = true;
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             // Forward
             idx += 1;
             LoadSlide();
         }
-        if (Input.GetMouseButtonDown(1)) {
+        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.LeftArrow)) {
             // Backward
             idx = Mathf.Max(idx - 1, 0);
-            slide.sprite = Slides [idx];
+            LoadSlide();
         }
     }
 
