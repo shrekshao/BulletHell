@@ -80,5 +80,8 @@ public class LevelManager : MonoBehaviour {
 
         newEnemy.GetComponent<EnemyMovePath>().pathName = enemyJson["path"];
 
+        // TODO: ? generate path? probably not
+        // put all paths in the scene
+
     }
 }
