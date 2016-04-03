@@ -1,8 +1,8 @@
 [
-    {"class":"Enemy1", "time": 0.0, "x": 0.2, "path": "path1", "pathTime": 7.0}
-    ,{"class":"Enemy1", "time": 0.0, "x": 0.8, "path": "path2", "pathTime": 5.0}
+    {"class":"Enemy1", "time": 0.0, "x": 0.2, "path": "path1", "pathTime": 100.0}
+    ,{"class":"Enemy1", "time": 0.0, "x": 0.8, "path": "path2", "pathTime": 50.0}
     ,{"class":"Enemy1", "time": 4.0, "x": 0.5, "path": "-"}
-    ,{"class":"Enemy1", "time": 5.0, "x": 0.5, "path": "path2", "pathTime": 5.0}
+    ,{"class":"Enemy1", "time": 5.0, "x": 0.5, "path": "path2", "pathTime": 50.0}
     ,{"class":"Enemy2", "time": 6.0, "x": 0.3, "path": "down"}
-    ,{"class":"Enemy1", "time": 5.0, "x": 0.5, "path": "path3", "pathTime": 15.0}
+    ,{"class":"Enemy1", "time": 5.0, "x": 0.5, "path": "path3", "pathTime": 30.0}
 ]

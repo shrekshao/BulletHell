@@ -1,85 +1,109 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyBehaviorBase : MonoBehaviour {
+public class EnemyBehaviorBase : MonoBehaviour
+{
 
 
     //[SerializeField] Sprite bullet;
 
-    Transform fireTransform;
+    public Transform BulletOrigin;
 
     //temp
-    Transform playerTransform;
+    PlayerTarget playerTarget;
 
-	// Use this for initialization
-	void Start () {
-        fireTransform = transform.Find("fire_position");
-
+    void Start()
+    {
         GameObject p = GameObject.Find("Player");
-        if(p)
-        {
-            playerTransform = p.transform;
+        if (p) {
+            playerTarget = p.GetComponent<PlayerTarget>();
         }
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        Aim(playerTransform);
 
-        if(Random.value < 0.05)
-        {
-            Fire();
+        time_modeswitch = BulletPhaseOffset;
+    }
+
+    void Update()
+    {
+        if (playerTarget.Despawned) {
+            return;
         }
-	}
 
+        Aim(playerTarget);
+    }
 
+    void FixedUpdate()
+    {
+        TryFire();
+    }
 
-    const float BulletSpeed = 0.2f;
-    const int BulletPeriod = 1;
-    const float BulletSpread = 0.15f;
+    public float BulletSpeed = 0.1f;
+    public int BulletPeriod = 1;
+    public float BulletSpread = 90;
+    public float RechargeTime = 5;
+    public float FiringTime = 5;
+    public float SpreadFactor = 0.618f;
+    public float BulletPhaseOffset = 0;
 
     public Bullet prefab;
 
-    float since_last_shot = 0.0f;
+    float time_modeswitch = 0.0f;
+    int since_last_shot = 0;
     float last_angle = 0.0f;
+    bool firing = false;
+
+    void TryFire()
+    {
+        if (firing) {
+            if (Time.time - time_modeswitch > FiringTime) {
+                firing = false;
+                Debug.Log(firing);
+                time_modeswitch = Time.time;
+            }
+        } else {
+            if (Time.time - time_modeswitch > RechargeTime) {
+                firing = true;
+                Debug.Log(firing);
+                time_modeswitch = Time.time;
+            }
+        }
+
+        if (firing) {
+            Fire();
+        }
+    }
 
     void Fire()
     {
-        //Instantiate(bullet, fireTransform.position, this.transform.rotation);
+        since_last_shot += 1;
+        if (since_last_shot >= BulletPeriod) {
+            Vector2 vel = new Vector2(0, BulletSpeed);
 
-        Vector2 vel = new Vector2(last_angle - BulletSpread * 0.5f, 1.0f);
-        last_angle = (last_angle + BulletSpread * 0.618f) % BulletSpread;
-        vel.Normalize();
-        vel *= BulletSpeed;
+            last_angle = (last_angle + BulletSpread * SpreadFactor) % BulletSpread;
+            float angle = last_angle - BulletSpread * 0.5f;
 
-        float r = (this.transform.rotation.eulerAngles.z - 90.0f) * Mathf.Deg2Rad;
-        Vector2 tmp = vel;
-        vel.x = Mathf.Cos(r) * tmp.x - Mathf.Sin(r) * tmp.y;
-        vel.y = Mathf.Sin(r) * tmp.x + Mathf.Cos(r) * tmp.y;
+            float r = (this.transform.rotation.eulerAngles.z + angle) * Mathf.Deg2Rad;
+            Vector2 tmp = vel;
+            vel.x = Mathf.Cos(r) * tmp.x - Mathf.Sin(r) * tmp.y;
+            vel.y = Mathf.Sin(r) * tmp.x + Mathf.Cos(r) * tmp.y;
 
-
-        BulletArena.Spawn(prefab, fireTransform.position, vel, true);
-        since_last_shot = 0;
+            BulletArena.Spawn(prefab, BulletOrigin.position, vel, true);
+            since_last_shot = 0;
+        }
     }
 
 
-    void Aim(Transform target)
+    void Aim(PlayerTarget target)
     {
-        if(target)
-        {
-            float r = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, r));
-        }
-        
+        float r = Mathf.Atan2(target.transform.position.y - transform.position.y,
+                      target.transform.position.x - transform.position.x) * Mathf.Rad2Deg - 90;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, r));
     }
 
     void Deconstruct()
     {
         EnemyMovePath emp = GetComponent<EnemyMovePath>();
 
-        if(emp)
-        {
+        if (emp) {
             Destroy(GameObject.Find(emp.pathName));
         }
 

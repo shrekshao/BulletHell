@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
         set {
             hostile = value;
             this.gameObject.layer = hostile ? layer_enemybullet : layer_playerbullet;
-            this.GetComponent<SpriteRenderer>().color = hostile ? Color.red : Color.blue;
+            this.GetComponent<SpriteRenderer>().color = hostile ? Color.white : Color.green;
         }
     }
 

@@ -13,10 +13,6 @@ public class ArrowControl : MonoBehaviour
             return;
         }
 
-        if (playertarget.Despawned) {
-            return;
-        }
-
         float move_x = 0, move_y = 0;
         move_x -= Input.GetKey(KeyCode.LeftArrow) ? 1 : 0;
         move_x += Input.GetKey(KeyCode.RightArrow) ? 1 : 0;

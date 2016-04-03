@@ -23,7 +23,7 @@ public class PlayerTarget : MonoBehaviour
     {
         if (Despawned) {
             var color = sprite.color;
-            color.a = ((int)((Time.time - despawntime) / FlickerTime)) % 2 == 0 ? 0f : 0.5f;
+            color.a = ((int)((Time.time - despawntime) / FlickerTime)) % 2 == 0 ? 0.5f : 1f;
             sprite.color = color;
         }
 
@@ -39,14 +39,16 @@ public class PlayerTarget : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        this.transform.position = SpawnPoint.transform.position;
-        this.transform.rotation = SpawnPoint.transform.rotation;
-        var color = sprite.color;
-        color.b = 0;
-        color.g = 0;
-        color.a = 0.55f;
-        sprite.color = color;
-        despawntime = Time.time;
-        Despawned = true;
+        if (!Despawned) {
+            this.transform.position = SpawnPoint.transform.position;
+            this.transform.rotation = SpawnPoint.transform.rotation;
+            var color = sprite.color;
+            color.b = 0;
+            color.g = 0;
+            color.a = 1;
+            sprite.color = color;
+            despawntime = Time.time;
+            Despawned = true;
+        }
     }
 }
