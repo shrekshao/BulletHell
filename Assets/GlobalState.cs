@@ -33,7 +33,7 @@ public class GlobalState : MonoBehaviour
     void OnGUI()
     {
         GUI.Label(new Rect(10, 10, 150, 100), string.Format("TIME: x{0:f2}", Time.timeScale), guistyle);
-        GUI.Label(new Rect(10, 90, 150, 100), string.Format("POWER: {0:f0}/{0:f0}", power, MaxPower), guistyle);
+        GUI.Label(new Rect(10, 90, 150, 100), string.Format("POWER: {0:f0}/{1:f0}", power, MaxPower), guistyle);
     }
 
     void Update()
