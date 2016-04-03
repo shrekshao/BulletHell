@@ -29,7 +29,7 @@ public class EnemyBehaviorBase : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!playerTarget.Despawned) {
+        if (playerTarget != null && !playerTarget.Despawned) {
             TryFire();
         }
     }
@@ -54,13 +54,11 @@ public class EnemyBehaviorBase : MonoBehaviour
         if (firing) {
             if (Time.time - time_modeswitch > FiringTime) {
                 firing = false;
-                Debug.Log(firing);
                 time_modeswitch = Time.time;
             }
         } else {
             if (Time.time - time_modeswitch > RechargeTime) {
                 firing = true;
-                Debug.Log(firing);
                 time_modeswitch = Time.time;
             }
         }

@@ -23,5 +23,6 @@ public class ArrowControl : MonoBehaviour
             mv = mv.normalized * MoveSpeed * Time.timeScale;
             this.transform.localPosition += mv;
         }
+        this.transform.localPosition = BulletArena.Instance.bounds.ClosestPoint(this.transform.localPosition);
     }
 }
