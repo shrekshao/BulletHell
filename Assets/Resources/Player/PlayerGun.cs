@@ -9,8 +9,11 @@ public class PlayerGun : MonoBehaviour
     public int BulletPeriod = 1;
     public float SpreadPhase = 0.618f;
     public Vector2 StartFiringVector = new Vector2(0, MaxFiringVectorMag);
+    public float FiringVectorMoveSpeed = 0.1f;
     public KeyCode AimKey = KeyCode.Z;
     public KeyCode FireKey = KeyCode.X;
+    public KeyCode BulletSwapKey = KeyCode.C;
+    public float BulletSwapCost = 500;
 
     public Bullet prefab;
     public Color color;
@@ -43,7 +46,7 @@ public class PlayerGun : MonoBehaviour
             firing_vector = firing_vector / mag * MaxFiringVectorMag;
         }
 
-        bullet_spread = 45f / Mathf.Pow(firing_vector.sqrMagnitude, 0.75f);
+        bullet_spread = 45f / Mathf.Pow(firing_vector.sqrMagnitude, 0.25f);
         
         float r = Mathf.Atan2(firing_vector.y, firing_vector.x) * Mathf.Rad2Deg - 90;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, r));
@@ -52,9 +55,16 @@ public class PlayerGun : MonoBehaviour
     void FixedUpdate()
     {
         if (Input.GetKey(AimKey)) {
-            Vector3 dp = transform.position - last_position;
-            firing_vector.x -= dp.x;
-            firing_vector.y -= dp.y;
+            float move_x = 0, move_y = 0;
+            move_x -= Input.GetKey(KeyCode.LeftArrow) ? 1 : 0;
+            move_x += Input.GetKey(KeyCode.RightArrow) ? 1 : 0;
+            move_y -= Input.GetKey(KeyCode.DownArrow) ? 1 : 0;
+            move_y += Input.GetKey(KeyCode.UpArrow) ? 1 : 0;
+            move_x *= FiringVectorMoveSpeed;
+            move_y *= FiringVectorMoveSpeed;
+
+            firing_vector.x -= move_x;
+            firing_vector.y -= move_y;
             UpdateFiringVector();
         }
 
@@ -65,9 +75,15 @@ public class PlayerGun : MonoBehaviour
             return;
         }
 
-        if (playertarget.Despawned) {
+        if (GlobalState.PlayerDead) {
             since_last_shot += BulletPeriod;
             return;
+        }
+
+        if (Input.GetKeyDown(BulletSwapKey)) {
+            if (GlobalState.Instance.UsePower(BulletSwapCost)) {
+                BulletArena.Reverse();
+            }
         }
 
         if (Input.GetKey(FireKey)) {

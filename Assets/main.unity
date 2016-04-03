@@ -520,20 +520,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423496, guid: 2f89efcd379c310438c4bf38f32fc93a, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11418854, guid: 2f89efcd379c310438c4bf38f32fc93a, type: 2}
       propertyPath: SpawnPoint
       value: 
       objectReference: {fileID: 1672597420}
-    - target: {fileID: 5868188, guid: 2f89efcd379c310438c4bf38f32fc93a, type: 2}
-      propertyPath: m_Offset.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5868188, guid: 2f89efcd379c310438c4bf38f32fc93a, type: 2}
-      propertyPath: m_Radius
-      value: 0.15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f89efcd379c310438c4bf38f32fc93a, type: 2}
   m_IsPrefabParent: 0
@@ -709,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: path1
+  pathName: path4
   pathColor: {r: 0.19999981, g: 0, b: 1, a: 1}
   nodes:
   - {x: 3.3403606, y: 5.4103346, z: 0}
@@ -941,15 +933,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 488206, guid: 24de7af333d5e9b4d90f90461a7cf656, type: 2}
       propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 488206, guid: 24de7af333d5e9b4d90f90461a7cf656, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 488206, guid: 24de7af333d5e9b4d90f90461a7cf656, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24de7af333d5e9b4d90f90461a7cf656, type: 2}

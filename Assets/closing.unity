@@ -178,6 +178,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11419546, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
+      propertyPath: Slides.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 419866, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -214,6 +218,11 @@ Prefab:
       propertyPath: NextScene
       value: title
       objectReference: {fileID: 0}
+    - target: {fileID: 11419546, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
+      propertyPath: Slides.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 748c08cc84af96b4fa27bacdef314560,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1266cbfd90df32446989dd7b0589c59f, type: 2}
   m_IsPrefabParent: 0

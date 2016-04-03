@@ -4,16 +4,16 @@ using System.Collections;
 public class BossBehavior : MonoBehaviour
 {
 
-	//// Use this for initialization
-	//void Start () {
+    //// Use this for initialization
+    //void Start () {
 
-	//}
+    //}
 	
-	// Update is called once per frame
+    // Update is called once per frame
     public float battle_line = 2.0f;
     public float down_speed = 0.01f;
 
-    public Transform []BulletOrigin;
+    public Transform[] BulletOrigin;
 
     //temp
     PlayerTarget playerTarget;
@@ -36,49 +36,42 @@ public class BossBehavior : MonoBehaviour
     void Start()
     {
         GameObject p = GameObject.Find("Player");
-        if (p)
-        {
+        if (p) {
             playerTarget = p.GetComponent<PlayerTarget>();
         }
 
         time_modeswitch = BulletPhaseOffset;
     }
 
-    void Update () {
-        if(this.transform.position.y > battle_line)
-        {
+    void Update()
+    {
+        if (this.transform.position.y > battle_line) {
             this.transform.position += Vector3.down * down_speed;
         }
-	}
+    }
 
     void FixedUpdate()
     {
-        if (playerTarget != null && !playerTarget.Despawned)
-        {
+        if (playerTarget != null && !GlobalState.PlayerDead) {
             TryFire();
         }
     }
 
     void TryFire()
     {
-        if (firing)
-        {
-            if (Time.time - time_modeswitch > FiringTime)
-            {
+        if (firing) {
+            if (Time.time - time_modeswitch > FiringTime) {
                 firing = false;
                 time_modeswitch = Time.time;
             }
-        }
-        else {
-            if (Time.time - time_modeswitch > RechargeTime)
-            {
+        } else {
+            if (Time.time - time_modeswitch > RechargeTime) {
                 firing = true;
                 time_modeswitch = Time.time;
             }
         }
 
-        if (firing)
-        {
+        if (firing) {
             Fire();
         }
     }
@@ -86,8 +79,7 @@ public class BossBehavior : MonoBehaviour
     void Fire()
     {
         since_last_shot += 1;
-        if (since_last_shot >= BulletPeriod)
-        {
+        if (since_last_shot >= BulletPeriod) {
             Vector2 vel = new Vector2(0, BulletSpeed);
 
             last_angle = (last_angle + BulletSpread * SpreadFactor) % BulletSpread;
@@ -102,8 +94,7 @@ public class BossBehavior : MonoBehaviour
             //BulletArena.Spawn(prefab, BulletOrigin.position, vel, true);
             //BulletArena.Spawn(prefab, BulletOrigin[Random.Range(0,BulletOrigin.Length)].position, vel, true);
 
-            foreach(Transform b in BulletOrigin)
-            {
+            foreach (Transform b in BulletOrigin) {
                 BulletArena.Spawn(prefab, b.position, vel, true);
             }
 

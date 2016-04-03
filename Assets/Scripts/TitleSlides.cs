@@ -7,12 +7,12 @@ public class TitleSlides : MonoBehaviour
     public Sprite[] Slides;
     public string NextScene;
 
-    SpriteRenderer renderer;
+    SpriteRenderer slide;
     int idx = 0;
 
     void Start()
     {
-        renderer = GetComponent<SpriteRenderer>();
+        slide = GetComponent<SpriteRenderer>();
         LoadSlide();
     }
 
@@ -26,7 +26,7 @@ public class TitleSlides : MonoBehaviour
         if (Input.GetMouseButtonDown(1)) {
             // Backward
             idx = Mathf.Max(idx - 1, 0);
-            renderer.sprite = Slides [idx];
+            slide.sprite = Slides [idx];
         }
     }
 
@@ -35,7 +35,7 @@ public class TitleSlides : MonoBehaviour
         if (idx >= Slides.Length) {
             SceneManager.LoadScene(NextScene);
         } else {
-            renderer.sprite = Slides [idx];
+            slide.sprite = Slides [idx];
         }
     }
 }
