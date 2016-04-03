@@ -15,7 +15,7 @@ public class BulletSource : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            arena.Spawn(prefab, color, this.transform.position, new Vector2(0, 0.1f), hostile);
+            arena.Spawn(prefab, this.transform.position, new Vector2(0, 0.1f), hostile);
         }
     }
 }

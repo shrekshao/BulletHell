@@ -3,11 +3,8 @@ using System.Collections.Generic;
 
 public class BulletArena : MonoBehaviour
 {
-    List<Bullet> bullets;
+    HashSet<Bullet> bullets = new HashSet<Bullet>();
     public Bounds bounds;
-
-    static int layer_playerbullet = LayerMask.NameToLayer("PlayerBullet");
-    static int layer_enemybullet = LayerMask.NameToLayer("EnemyBullet");
 
     void Start()
     {
@@ -15,15 +12,32 @@ public class BulletArena : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.A)) {
+            Reverse();
+        }
     }
 
-    public void Spawn(Bullet prefab, Color color, Vector2 pos, Vector2 vel, bool hostile)
+    public void Spawn(Bullet prefab, Vector2 pos, Vector2 vel, bool hostile)
     {
         var bullet = Instantiate(prefab);
-        bullet.gameObject.layer = hostile ? layer_enemybullet : layer_playerbullet;
-        bullet.GetComponent<SpriteRenderer>().color = color;
         bullet.transform.position = pos;
         bullet.velocity = vel;
         bullet.arena = this;
+        bullet.Hostile = hostile;
+        bullets.Add(bullet);
+    }
+
+    public void Despawn(Bullet bullet)
+    {
+        bullets.Remove(bullet);
+        Destroy(bullet.gameObject);
+    }
+
+    void Reverse()
+    {
+        foreach (var bullet in bullets) {
+            bullet.velocity = -bullet.velocity;
+            bullet.Hostile = !bullet.Hostile;
+        }
     }
 }
