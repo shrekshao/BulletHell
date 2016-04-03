@@ -20,7 +20,7 @@ public class ArrowControl : MonoBehaviour
         move_y += Input.GetKey(KeyCode.UpArrow) ? 1 : 0;
         if (move_x != 0 || move_y != 0) {
             var mv = new Vector3(move_x, move_y, 0);
-            mv = mv.normalized * MoveSpeed;
+            mv = mv.normalized * MoveSpeed * Time.timeScale;
             this.transform.localPosition += mv;
         }
     }

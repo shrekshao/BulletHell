@@ -23,10 +23,9 @@ public class Bullet : MonoBehaviour
     {
     }
 
-
     void Update()
     {
-        this.transform.position += new Vector3(velocity.x, velocity.y, 0);
+        this.transform.position += new Vector3(velocity.x, velocity.y, 0) * Time.timeScale;
         if (!this.arena.bounds.Contains(this.arena.transform.InverseTransformPoint(this.transform.position))) {
             this.arena.Despawn(this);
         }
