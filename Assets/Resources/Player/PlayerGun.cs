@@ -14,14 +14,21 @@ public class PlayerGun : MonoBehaviour
     float since_last_shot = 0.0f;
     float last_angle = 0.0f;
 
-    void Start()
-    {
-    }
+    PlayerTarget playertarget;
 
     void FixedUpdate()
     {
-        since_last_shot += 1;
+        if (!playertarget) {
+            playertarget = GetComponent<PlayerTarget>();
+            return;
+        }
 
+        if (playertarget.Despawned) {
+            since_last_shot += BulletPeriod;
+            return;
+        }
+
+        since_last_shot += 1;
         if (Input.GetKey(KeyCode.Space)) {
             if (since_last_shot >= BulletPeriod) {
                 Vector2 vel = new Vector2(last_angle - BulletSpread * 0.5f, 1.0f);

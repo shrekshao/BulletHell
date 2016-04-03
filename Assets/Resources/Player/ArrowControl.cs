@@ -4,15 +4,19 @@ public class ArrowControl : MonoBehaviour
 {
     public float MoveSpeed = 0.1f;
 
-    // Use this for initialization
-    void Start()
-    {
-	
-    }
-	
-    // Update is called once per frame
+    PlayerTarget playertarget;
+
     void Update()
     {
+        if (!playertarget) {
+            playertarget = GetComponent<PlayerTarget>();
+            return;
+        }
+
+        if (playertarget.Despawned) {
+            return;
+        }
+
         float move_x = 0, move_y = 0;
         move_x -= Input.GetKey(KeyCode.LeftArrow) ? 1 : 0;
         move_x += Input.GetKey(KeyCode.RightArrow) ? 1 : 0;

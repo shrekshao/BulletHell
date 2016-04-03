@@ -18,10 +18,6 @@ public class Bullet : MonoBehaviour
     static int layer_playerbullet = LayerMask.NameToLayer("PlayerBullet");
     static int layer_enemybullet = LayerMask.NameToLayer("EnemyBullet");
 
-    void Start()
-    {
-    }
-
     void Update()
     {
         this.transform.position += new Vector3(velocity.x, velocity.y, 0) * Time.timeScale;
