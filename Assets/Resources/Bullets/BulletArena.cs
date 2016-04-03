@@ -13,13 +13,6 @@ public class BulletArena : MonoBehaviour
         Instance = this;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A)) {
-            Reverse();
-        }
-    }
-
     public static void Spawn(Bullet prefab, Vector2 pos, Vector2 vel, bool hostile)
     {
         var bullet = Instantiate(prefab);
@@ -35,11 +28,13 @@ public class BulletArena : MonoBehaviour
         Destroy(bullet.gameObject);
     }
 
-    void Reverse()
+    public static void Reverse()
     {
-        foreach (var bullet in bullets) {
-            bullet.velocity = -bullet.velocity;
-            bullet.Hostile = !bullet.Hostile;
+        foreach (var bullet in Instance.bullets) {
+            if (bullet != null) {
+                bullet.velocity = -bullet.velocity;
+                bullet.Hostile = !bullet.Hostile;
+            }
         }
     }
 }

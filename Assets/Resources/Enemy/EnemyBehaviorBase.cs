@@ -29,7 +29,7 @@ public class EnemyBehaviorBase : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (playerTarget != null && !playerTarget.Despawned) {
+        if (playerTarget != null && !GlobalState.PlayerDead) {
             TryFire();
         }
     }

@@ -28,5 +28,5 @@
     ,{"class":"Enemy1", "time": 90.0, "x": 0.5, "path": "path3", "pathTime": 50.0}
     ,{"class":"Enemy1", "time": 95.0, "x": 0.5, "path": "path3", "pathTime": 50.0}
     ,{"class":"Enemy1", "time": 99.0, "x": 0.5, "path": "path3", "pathTime": 50.0}
-    ,{"class":"Boss1", "time": 120.0, "x": -0.5, "path": "-"}
+    ,{"class":"BossFinal", "time": 120.0, "x": -0.5, "path": "-"}
 ]
