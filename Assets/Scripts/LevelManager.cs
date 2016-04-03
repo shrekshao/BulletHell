@@ -79,8 +79,13 @@ public class LevelManager : MonoBehaviour {
         GameObject newEnemy = Instantiate(Resources.Load("Enemy/" + enemyJson["class"]), new Vector3(enemyJson["x"].AsFloat, Y_TOP), Quaternion.identity) as GameObject;
 
         //enemy move path? optional?
-        newEnemy.GetComponent<EnemyMovePath>().pathName = enemyJson["path"];
-
+        EnemyMovePath emp = newEnemy.GetComponent<EnemyMovePath>();
+        if(emp)
+        {
+            emp.pathName = enemyJson["path"];
+            emp.pathTime = enemyJson["pathTime"].AsFloat;
+        }
+        
         // TODO: ? generate path? probably not
         // put all paths in the scene
 

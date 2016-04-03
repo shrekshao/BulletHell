@@ -14,7 +14,13 @@ public class EnemyBehaviorBase : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         fireTransform = transform.Find("fire_position");
-        playerTransform = GameObject.Find("Player").transform;
+
+        GameObject p = GameObject.Find("Player");
+        if(p)
+        {
+            playerTransform = p.transform;
+        }
+        
 	}
 	
 	// Update is called once per frame

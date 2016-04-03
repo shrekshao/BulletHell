@@ -5,6 +5,7 @@ public class EnemyMovePath : MonoBehaviour {
 
     //[SerializeField]
     public string pathName = "-";
+    public float pathTime = 5.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +24,7 @@ public class EnemyMovePath : MonoBehaviour {
         else
         {
             // follow path
-            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathName), "time", 5));
+            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathName), "time", pathTime));
         }
         
     }

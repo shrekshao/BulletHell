@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9629aa333f98a5148a77535475797256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  prefab: {fileID: 11431480, guid: f75c9d676b425d546a1aca9913d346a6, type: 2}
   flyingSpeed: 0.1
 --- !u!114 &11499548
 MonoBehaviour:
