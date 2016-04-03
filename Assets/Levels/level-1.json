@@ -3,6 +3,10 @@
     ,{"class":"Enemy1", "time": 0.0, "x": 0.8, "path": "path2", "pathTime": 50.0}
     ,{"class":"Enemy1", "time": 4.0, "x": 0.5, "path": "-"}
     ,{"class":"Enemy1", "time": 5.0, "x": 0.5, "path": "path2", "pathTime": 50.0}
-    ,{"class":"Enemy2", "time": 6.0, "x": 0.3, "path": "down"}
-    ,{"class":"Enemy1", "time": 5.0, "x": 0.5, "path": "path3", "pathTime": 30.0}
+    ,{"class":"Enemy3", "time": 6.0, "x": -5.0, "path": "down"}
+    ,{"class":"Enemy3", "time": 6.5, "x": 0.0, "path": "down"}
+    ,{"class":"Enemy3", "time": 7.0, "x": 2.0, "path": "down"}
+    ,{"class":"Enemy3", "time": 7.5, "x": 4.0, "path": "down"}
+    ,{"class":"Enemy1", "time": 7.0, "x": 0.5, "path": "path3", "pathTime": 30.0}
+    ,{"class":"Boss1", "time": 10.0, "x": -0.5, "path": "-"}
 ]

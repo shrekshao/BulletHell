@@ -5,8 +5,38 @@ public class BulletTarget : MonoBehaviour
 {
     public int Health = 1;
 
+    float delta_color = 0.1f;
+
+    SpriteRenderer sprite;
+    //Color original_color;
+
+    void Start()
+    {
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        //original_color = sprite.color;
+    }
+
+
+    void Update()
+    {
+        if(1.0f > sprite.color.g)
+        {
+            var color = sprite.color;
+            color.g = color.g + delta_color;
+            color.b = color.b + delta_color;
+            sprite.color = color;
+        }
+        
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
+        var color = sprite.color;
+        color.g = 0.0f;
+        color.b = 0.0f;
+        sprite.color = color;
+
+
         Health -= 1;
         if (Health <= 0) {
             Destroy(this.gameObject);
