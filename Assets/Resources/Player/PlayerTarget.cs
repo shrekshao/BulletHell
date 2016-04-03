@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PlayerTarget : MonoBehaviour
 {
-    const float RespawnTime = 2.0f;
-    const float FlickerTime = 0.15f;
+    public float RespawnTime = 2.0f;
+    public float FlickerTime = 0.15f;
 
     public Transform SpawnPoint;
 
@@ -42,6 +42,7 @@ public class PlayerTarget : MonoBehaviour
         if (!Despawned) {
             this.transform.position = SpawnPoint.transform.position;
             this.transform.rotation = SpawnPoint.transform.rotation;
+            this.GetComponent<PlayerGun>().ResetFiringVector();
             var color = sprite.color;
             color.b = 0;
             color.g = 0;
