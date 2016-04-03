@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 20
+  ago: {fileID: 178724, guid: 4d59d613a26756d40b8d4245c67a232f, type: 2}
 --- !u!212 &21295592
 SpriteRenderer:
   m_ObjectHideFlags: 1

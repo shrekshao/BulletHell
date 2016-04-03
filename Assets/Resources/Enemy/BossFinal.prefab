@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 1000
+  ago: {fileID: 178724, guid: 8661b903813f8da408639204cdcd9678, type: 2}
 --- !u!212 &21233598
 SpriteRenderer:
   m_ObjectHideFlags: 1

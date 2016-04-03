@@ -10,10 +10,21 @@ public class BulletTarget : MonoBehaviour
     SpriteRenderer sprite;
     //Color original_color;
 
+    //AudioSource audio;
+    //public string audio_string;
+    public GameObject ago;
+
     void Start()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
         //original_color = sprite.color;
+
+        //if(audio_string != "")
+        //{
+        //    audio = Resources.Load("8BitSounds/" + audio_string) as AudioSource;
+        //}
+        
+        
     }
 
 
@@ -43,6 +54,14 @@ public class BulletTarget : MonoBehaviour
 
         Health -= 1;
         if (Health <= 0) {
+
+            Instantiate(ago, transform.position, Quaternion.identity);
+            //if(audio)
+            //{
+            //    audio.Play();
+            //}
+            
+            
             Destroy(this.gameObject);
         }
     }
