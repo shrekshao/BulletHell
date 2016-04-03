@@ -3,4 +3,5 @@
     ,{"class":"Enemy1", "time": 0.0, "x": 0.8, "path": "path2"}
     ,{"class":"Enemy1", "time": 4.0, "x": 0.5, "path": "-"}
     ,{"class":"Enemy1", "time": 5.0, "x": 0.5, "path": "path2"}
+    ,{"class":"Enemy2", "time": 6.0, "x": 0.3, "path": "down"}
 ]

@@ -16,6 +16,10 @@ public class EnemyMovePath : MonoBehaviour {
             // tmp
             iTween.MoveBy(gameObject, iTween.Hash("x", 2, "easeType", "easeInOutExpo", "loopType", "pingPong", "delay", .1));
         }
+        else if(pathName == "down")
+        {
+            //this.transform.position += Vector3.down;
+        }
         else
         {
             // follow path
