@@ -126,7 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6aaa4f1060754249a443a22d8366420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arena: {fileID: 0}
   prefab: {fileID: 11431480, guid: f75c9d676b425d546a1aca9913d346a6, type: 2}
   color: {r: 0, g: 0, b: 1, a: 1}
   hostile: 0

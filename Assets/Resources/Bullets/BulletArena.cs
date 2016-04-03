@@ -3,11 +3,14 @@ using System.Collections.Generic;
 
 public class BulletArena : MonoBehaviour
 {
+    public static BulletArena Instance { get; private set; }
+
     HashSet<Bullet> bullets = new HashSet<Bullet>();
     public Bounds bounds;
 
     void Start()
     {
+        Instance = this;
     }
 
     void Update()
@@ -17,19 +20,18 @@ public class BulletArena : MonoBehaviour
         }
     }
 
-    public void Spawn(Bullet prefab, Vector2 pos, Vector2 vel, bool hostile)
+    public static void Spawn(Bullet prefab, Vector2 pos, Vector2 vel, bool hostile)
     {
         var bullet = Instantiate(prefab);
         bullet.transform.position = pos;
         bullet.velocity = vel;
-        bullet.arena = this;
         bullet.Hostile = hostile;
-        bullets.Add(bullet);
+        Instance.bullets.Add(bullet);
     }
 
-    public void Despawn(Bullet bullet)
+    public static void Despawn(Bullet bullet)
     {
-        bullets.Remove(bullet);
+        Instance.bullets.Remove(bullet);
         Destroy(bullet.gameObject);
     }
 

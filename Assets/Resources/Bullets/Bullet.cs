@@ -4,7 +4,6 @@ using System.Collections.Generic;
 public class Bullet : MonoBehaviour
 {
     public Vector2 velocity;
-    public BulletArena arena;
     bool hostile;
 
     public bool Hostile {
@@ -26,8 +25,8 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         this.transform.position += new Vector3(velocity.x, velocity.y, 0) * Time.timeScale;
-        if (!this.arena.bounds.Contains(this.arena.transform.InverseTransformPoint(this.transform.position))) {
-            this.arena.Despawn(this);
+        if (!BulletArena.Instance.bounds.Contains(BulletArena.Instance.transform.InverseTransformPoint(this.transform.position))) {
+            BulletArena.Despawn(this);
         }
     }
 }
